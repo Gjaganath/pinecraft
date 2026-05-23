@@ -1219,13 +1219,9 @@ stop)
 status)
       user=$(whoami); if [ $user != "'${user}'" ]; then echo "Cannot run as ${user} - expecting '${user}'"; exit; fi
       if screen -ls | grep -q Pinecraft; then
-        echo "Minecraft server is Online! Join through: "
-        hostname -I | awk '{print $1}'
-        echo "To stop server use '~/minecraft/stop'"
-        echo "To reboot server use 'sudo ~/minecraft/reboot'"
+        echo 1
       else
-        echo "Minecraft server is Offline."
-        echo "To start server use '~/minecraft/server'"
+        echo 0
       fi
     ;;
 
